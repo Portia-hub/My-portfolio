@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aria Calculator</title>
+    <style>
+        body {
+            background: #f6f0e5;
+            color: #202b3c;
+            font-family: Georgia, "Times New Roman", serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            padding: 24px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calculator {
+            background: #fffdf8;
+            border: 1px solid #e1c98e;
+            border-radius: 6px;
+            box-shadow: 0 24px 50px rgba(51, 39, 25, 0.18);
+            padding: 34px 30px 30px;
+            width: min(100%, 390px);
+            position: relative;
+        }
+
+        .calculator h1 {
+            margin: 0 0 8px;
+            font-size: 2.2rem;
+            text-align: center;
+            color: #202b3c;
+            letter-spacing: 0.04em;
+        }
+
+        .subtitle {
+            color: #a06f22;
+            font-size: 0.9rem;
+            text-align: center;
+            margin: 0 0 26px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .inputs {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .inputs label {
+            color: #8a6a3d;
+            font-size: 0.78rem;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .inputs input {
+            border: 1px solid #e1c98e;
+            border-radius: 4px;
+            padding: 14px 16px;
+            font-size: 1rem;
+            width: 100%;
+            outline: none;
+            background: #ffffff;
+            color: #202b3c;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .inputs input:focus {
+            border-color: #c99a3d;
+            box-shadow: 0 0 0 4px rgba(201, 154, 61, 0.16);
+        }
+
+        .buttons {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+            margin-bottom: 20px;
+        }
+
+        .buttons button {
+            border: none;
+            border-radius: 4px;
+            padding: 14px 0;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+
+        .buttons button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(51, 39, 25, 0.14);
+        }
+
+        .buttons .operator {
+            background: #3d5d7b;
+            color: #ffffff;
+        }
+
+        .buttons .clear {
+            background: #914848;
+            color: #ffffff;
+            grid-column: span 2;
+        }
+
+        .buttons .equals {
+            background: #c99a3d;
+            color: #ffffff;
+            grid-column: span 2;
+        }
+
+        .buttons button:focus-visible {
+            outline: 3px solid rgba(201, 154, 61, 0.5);
+            outline-offset: 2px;
+        }
+
+        .result {
+            background: #f7f0df;
+            border: 1px solid #e1c98e;
+            border-radius: 4px;
+            padding: 16px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #202b3c;
+            margin: 0;
+            min-height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Aria Calculator</h1>
+        <p class="subtitle">Simple numbers, carefully made</p>
+        <div class="inputs">
+            <label for="num1">First number</label>
+            <input type="number" id="num1" placeholder="Enter a number" step="any">
+            <label for="num2">Second number</label>
+            <input type="number" id="num2" placeholder="Enter a number" step="any">
+        </div>
+        <div class="buttons">
+            <button type="button" class="operator" onclick="selectOperator('+')">+</button>
+            <button type="button" class="operator" onclick="selectOperator('-')">-</button>
+            <button type="button" class="operator" onclick="selectOperator('x')">x</button>
+            <button type="button" class="operator" onclick="selectOperator('/')">/</button>
+            <button type="button" class="operator" onclick="selectOperator('%')">%</button>
+            <button type="button" class="operator" onclick="selectOperator('^')">^</button>
+            <button type="button" class="clear" onclick="clearFields()">Clear</button>
+            <button type="button" class="equals" onclick="calculate()">=</button>
+        </div>
+        <p id="results" class="result" aria-live="polite">Choose an operation to begin.</p>
+    <script>
+        let currentOperator = null;
+
+        function selectOperator(operator){
+            currentOperator = operator;
+            document.getElementById("results").textContent = "Operation selected: " + operator;
+        }
+
+        function calculate(){
+            let n1 = parseFloat(document.getElementById("num1").value);
+            let n2 = parseFloat(document.getElementById("num2").value);
+
+            if (currentOperator === null){
+                document.getElementById("results").textContent = "Please choose an operation first.";
+                return;
+            }
+
+            if (isNaN(n1) || isNaN(n2)){
+                document.getElementById("results").textContent = "Please enter both numbers.";
+                return;
+            }
+
+            if (currentOperator === "/" && n2 === 0){
+                document.getElementById("results").textContent = "You cannot divide by zero.";
+                return;
+            }
+
+            let results;
+
+            if (currentOperator === "+"){
+                results = n1 + n2;
+            } else if (currentOperator === "-"){
+                results = n1 - n2;
+            } else if (currentOperator === "x"){
+                results = n1 * n2;
+            } else if (currentOperator === "/"){
+                results = n1 / n2;
+            } else if (currentOperator === "%"){
+                results = n1 % n2;
+            } else if (currentOperator === "^"){
+                results = Math.pow(n1, n2);
+            } else {
+                results = "Invalid operator";
+            }
+
+            document.getElementById("results").textContent = "Result: " + results;
+            currentOperator = null;
+        }
+
+        function clearFields(){
+            currentOperator = null;
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("results").textContent = "Choose an operation to begin.";
+        }
+    </script>
+
+</div>
+
+</div>
+    
+</body>
+</html>
