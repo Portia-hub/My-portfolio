@@ -1,0 +1,89 @@
+{
+  "identity": {
+    "name": "Rashida Portia",
+    "role": "AI Data & Language Specialist",
+    "tagline": "Native Dagbani, Twi, and English speaker with a healthcare background, bringing clinical precision to AI training data, annotation, and language work.",
+    "location": "Tamale, Ghana",
+    "email": "portia.arp@gmail.com",
+    "phone": "0597886206"
+  },
+  "languages": [
+    { "name": "Dagbani", "level": "Native" },
+    { "name": "Akan / Twi", "level": "Fluent" },
+    { "name": "English", "level": "Fluent" }
+  ],
+  "skills": [
+    {
+      "title": "AI training data & annotation",
+      "detail": "Labeling, QA-checking, and validating structured data against detailed guidelines, with clinical-grade attention to accuracy."
+    },
+    {
+      "title": "Native & professional languages",
+      "detail": "Evaluate AI outputs, transcribe, translate, and localize across Dagbani, Akan/Twi, and English for linguistic and cultural accuracy."
+    },
+    {
+      "title": "Healthcare & clinical foundation",
+      "detail": "Qualified registered nurse trained in documentation accuracy, confidentiality, and sound judgment under pressure."
+    },
+    {
+      "title": "Data security & confidentiality",
+      "detail": "Certified in cybersecurity fundamentals (Google, Coursera) \u2014 safe handling of sensitive data and access."
+    },
+    {
+      "title": "Technical skills (in progress)",
+      "detail": "Studying software development \u2014 HTML, CSS, JavaScript, Python \u2014 and data analysis."
+    },
+    {
+      "title": "Digital content & voice",
+      "detail": "Video editing, graphic design, AI-assisted content, small-business social support, and trained voice performance."
+    }
+  ],
+  "experience": [
+    {
+      "dates": "Ongoing",
+      "title": "AI Data Annotator, QA & Digital Content Creator",
+      "org": "Freelance",
+      "points": [
+        "Perform data annotation, labeling, and QA requiring accuracy and strict adherence to detailed guidelines.",
+        "Evaluate and validate content across English, Akan/Twi, and Dagbani for linguistic and cultural accuracy.",
+        "Create AI-generated and AI-assisted content \u2014 video, graphics, and copy \u2014 for client projects.",
+        "Provide voice performance and narration in Dagbani, Twi, and English."
+      ]
+    },
+    {
+      "dates": "2015 \u2013 2017",
+      "title": "Registered Community Health Nurse (Qualified)",
+      "org": "NMTC, Bole",
+      "points": [
+        "Trained in accurate documentation, confidentiality, and sound clinical judgment under pressure.",
+        "Delivered community-facing health education across Dagbani, Twi, and English."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "tag": "AI Data & Language",
+      "title": "Healthcare-Domain AI Training Data & QA",
+      "summary": "Ongoing freelance annotation and evaluation work: labeling and QA-checking structured data against detailed guidelines, and evaluating AI-generated text and audio for accuracy and cultural fit across Dagbani, Akan/Twi, and English.",
+      "tools": ["Data annotation", "QA", "Dagbani", "Twi", "English"],
+      "link": null,
+      "linkLabel": null
+    },
+    {
+      "tag": "Python \u00b7 Tooling",
+      "title": "Portfolio Site Generator",
+      "summary": "This site is built by a small Python script that reads a single content file and generates the HTML pages \u2014 one source of truth for skills, experience, and projects, no manual copy-pasting across pages.",
+      "tools": ["Python", "JSON", "HTML templating"],
+      "link": "https://github.com/Portia-hub/My-portfolio/blob/main/generate_site.py",
+      "linkLabel": "View the generator script"
+    },
+    {
+      "tag": "Web \u00b7 Concept",
+      "title": "AgriHub",
+      "summary": "A digital platform concept for agricultural support, information access, and community empowerment in underserved regions.",
+      "tools": ["HTML", "CSS", "Responsive UI"],
+      "link": null,
+      "linkLabel": null
+    }
+  ]
+}

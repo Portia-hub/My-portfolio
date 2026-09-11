@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{NAME}} | {{ROLE}}</title>
+<meta name="description" content="{{TAGLINE}}" />
+<meta property="og:title" content="{{NAME}} | {{ROLE}}" />
+<meta property="og:description" content="{{TAGLINE}}" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">{{NAME}} <span>·</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+</header>
+
+<div class="shell">
+  <nav class="rail" id="rail">
+    <a class="rail-brand" href="index.html">{{NAME}}</a>
+    <span class="rail-role">{{ROLE}}</span>
+
+    <div class="rail-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="rail-langs">
+      <h4>Languages</h4>
+      {{LANGUAGES}}
+    </div>
+
+    <div class="rail-contact">
+      {{LOCATION}}
+      <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+      <a href="{{WHATSAPP}}" target="_blank" rel="noopener">WhatsApp: {{PHONE}}</a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <section class="hero hero-animate">
+      <span class="eyebrow">{{ROLE}}</span>
+      <h1>Precision in language, data, and health context.</h1>
+      <p class="lede">{{TAGLINE}}</p>
+      <div class="hero-actions">
+        <a href="projects.html" class="btn btn-primary">See my work</a>
+        <a href="contact.html" class="btn btn-secondary">Start a project</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-head">
+        <span class="index">01</span>
+        <h2>About</h2>
+      </div>
+      <p style="max-width:64ch; font-size:1rem; line-height:1.7;">
+        I'm a qualified registered nurse from Northern Ghana, now working at the intersection of
+        healthcare, language, and AI data. Six years of clinical training taught me to document
+        accurately, protect confidentiality, and stay precise under pressure &mdash; the same
+        discipline I bring to labeling, QA-checking, and evaluating data for AI systems. As a
+        native Dagbani speaker, fluent in Akan/Twi and English, I help teams get language and
+        cultural context right in places most datasets get it wrong. I'm also building technical
+        skills in software development and data analysis, and hold a certification in
+        cybersecurity fundamentals covering safe handling of sensitive data.
+      </p>
+    </section>
+
+    <figure class="page-visual home-visual">
+      <img src="Images/photo_2026-07-22_10-53-50%20(2).jpg" alt="Rashida working at a workstation" loading="lazy" />
+      <figcaption>Clinical precision carried into digital work.</figcaption>
+    </figure>
+
+    <section id="work">
+      <div class="section-head">
+        <span class="index">04</span>
+        <h2>Featured work</h2>
+      </div>
+      <div class="project-grid">
+        {{FEATURED_PROJECTS}}
+      </div>
+    </section>
+
+    <div class="cta-band">
+      <h2>Have healthcare-domain, African-language, or AI training data work to discuss?</h2>
+      <a href="contact.html" class="btn btn-primary">Get in touch</a>
+    </div>
+
+    <footer class="page-footer">
+      <span>&copy; 2026 {{NAME}}. Built with purpose.</span>
+      <span>Tamale, Ghana &middot; Available for remote work</span>
+    </footer>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
